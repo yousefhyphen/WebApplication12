@@ -1,0 +1,35 @@
+﻿@model  WebApplication12.Models.languages
+
+@{
+    ViewBag.Title = "CreateNew";
+}
+
+<h2>CreateNew</h2>
+<body>
+	<div>
+		<div class="container">
+			<h2>Create languages</h2>
+			@using (Html.BeginForm("IndexNew", "Student", FormMethod.Post))
+			{
+				<div class="form-group">
+					<label for="languages_Id">languages_Id</label>
+					@Html.TextBoxFor(m => m.languages_Id)
+				</div>
+
+				<div class="form-group">
+					<label for="languages_Name">languages_Name </label>
+					@Html.TextBoxFor(m => m.languages_Name)
+				</div>
+
+				<div class="form-group">
+					<label for="prices">prices</label>
+					@Html.TextBoxFor(m => m.prices)
+				</div>
+
+				<br />
+				<input type="submit" value="Submit" class="btn btn-primary">
+			}
+		</div>
+
+	</div>
+</body>

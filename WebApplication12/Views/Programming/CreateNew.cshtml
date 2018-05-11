@@ -1,0 +1,35 @@
+﻿@model  WebApplication12.Models.Programming
+
+@{
+    ViewBag.Title = "CreateNew";
+}
+
+<h2>CreateNew</h2>
+<body>
+	<div>
+		<div class="container">
+			<h2>Create Programming</h2>
+			@using (Html.BeginForm("IndexNew", "Student", FormMethod.Post))
+			{
+				<div class="form-group">
+					<label for="Programming_Id">Programming_Id</label>
+					@Html.TextBoxFor(m => m.Programming_Id)
+				</div>
+
+				<div class="form-group">
+					<label for="Programming_Name">Programming_Name </label>
+					@Html.TextBoxFor(m => m.Programming_Name)
+				</div>
+
+				<div class="form-group">
+					<label for="prices">prices</label>
+					@Html.TextBoxFor(m => m.Prices)
+				</div>
+
+				<br />
+				<input type="submit" value="Submit" class="btn btn-primary">
+			}
+		</div>
+
+	</div>
+</body>

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApplication12.Models.languages>
+
+@{
+	ViewBag.Title = "Index";
+}
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+
+	<style type="text/css">
+		.field-validation-error {
+			color: #ff0000;
+		}
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+		<h2>Index</h2>
+		<p>
+			@Html.ActionLink("Create New", "Create")
+		</p>
+		<p>
+			@Html.ActionLink("Create New using HTML Helper", "CreateNew")
+		</p>
+		<table class="table">
+			<tr>
+				<th>
+					languages_Name
+				</th>
+				<th>
+					prices
+				</th>
+				<th></th>
+			</tr>
+			@foreach (var item in Model)
+			{
+				<tr>
+					<td>
+						@Html.DisplayFor(modelItem => item.languages_Name)
+					</td>
+					<td>
+						@Html.DisplayFor(modelItem => item.prices)
+					</td>
+					<td>
+						@Html.ActionLink("Edit", "Edit", new { id = item.languages_Id }) |
+						@Html.ActionLink("Details", "Details", new { id = item.languages_Id }) |
+						@Html.ActionLink("Delete", "Delete", new { id = item.languages_Id })
+					</td>
+				</tr>
+			}
+		</table>
+</body>
+
